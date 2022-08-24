@@ -51,7 +51,7 @@ pagination:
       <h3>
         {% if post.redirect == blank %}
           <!-- <div id="firstif"></div> -->
-          <a class="post-title" href="https://dt1729.github.io{{ post.url }}">{{ post.title }}</a>
+          <a class="post-title" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         {% else %}
           {% if post.redirect contains '://' %}
             <!-- <div id="2ndif"></div> -->
