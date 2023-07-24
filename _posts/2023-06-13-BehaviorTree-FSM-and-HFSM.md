@@ -52,7 +52,7 @@ A mathematical definition of the finite state machine would be given by a triple
 
 A Deterministic input-output automata can be represented by equations of the following form:
 $$
-l^{\#} = \nu(l,i)
+l^{#} = \nu(l,i)
 o = \eta(l,i) 
 $$
 
