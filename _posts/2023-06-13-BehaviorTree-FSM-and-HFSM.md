@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Behavior Trees as an alternative to FSM and Heirarchical FSM
+title: Behavior Trees as an alternative to FSM and Heirarchical FSM[under works]
 date: 2023-06-13 09:47:00-0400
 description: Description and contrasting Properties of FSMs and HFSMs 
 tags: Task Planning
@@ -86,4 +86,24 @@ These new design definitions add a bit of nuance to our FSM design example by ma
     Fig. 1 Victor-Sierra Search with Datum information.
 </div>
 
-This resolves the complexity a little bit, but remember this is a statechart design from a state machine i.e. bottom-up design and not a top to bottom design i.e. we didn't design the behavior and move to the atomic parts. Doing it that way, we can have many ways to model this behavior. 
+This resolves the complexity a little bit, but remember this is a statechart design from a state machine i.e. bottom-up design and not a top to bottom design i.e. we didn't design the behavior and move to the atomic parts. Doing it that way, we can have many ways to model this behavior. <Insert top bottom discussion here about quadrotor planning with a faulty rotor, pick problem statement from motion planning mid term>. 
+
+Now we judge HFSM based on our three parameters, namely complexity, bug finding and code modularity. Let's see them one by one on how they perform on these metrics:
+
+    - Bug finding remains tough, given there may not be a set sequence in which the states execute, it is possible to get caught in loops, and if an error occours in time, it becomes difficult to isolate the state/hyperstate that caused this issue. 
+
+    - Code modularity depends on the type of approach considered while designing the overall system. We discuss this in context of two design approaches to design state charts: 
+        - If the approach considered is bottom-top then it is possible that high level behaviors are not re-usable since they will be made with some patches in addition to the core low level module, for eg. move straight and turn right would differ in small patch work of what kind of input they take and the way they interact with the outputs, why so? because the two things differ at the physics level, as in giving velocity and accelaration information becomes relevant for a right turn but may not be as relevant for a move straight, still relevant but not essential as compared to other. This makes the two subsystems to look different and making the system more complicated as we get into higher level design.  
+        
+        - Top-bottom level design mitigates these issues to a large level, and modules are thought as members that need to exist but nothing explicitly is stated unless top level connections are not fixed. Once we fix top level connections we can get into designing low level specific modules. Reusability of modules can be decided on the level of abstraction, you get this choice in only top to bottom design scheme, in bottom to top you just can't do this since, you don't know what a top level architecture looks like so atomic design doesn't suit the overall architecture. 
+        
+        - It is worth mentioning in top to bottom design you need to stop at some level of abstraction to design low level modules so that you can make design optimisations if required for performance. Since, after a point the high level specification of the robot are catered to and we need optimisation to match specifications of the product/API.
+
+    -  An extra point worth mentioning as also done in this [blog](https://statecharts.dev/benefit-all-states-explored.html) is that designers often find really meaningful edge cases while designing state charts. This is obvious when we look at our above discussion, thinking in a top-down fashion makes you think of all the big picture challenges and then designing behaviours become part of a robust behavior planning procedure during the on paper design, though this will add considerable time and testing apparatus(time and resources), but the design becomes robust. 
+
+Based on these it is easy to conclude that overall we have a much better system than vanilla FSMs but these may or maynot be good for real time systems, for event driven systems that are non-autonomous they work good, this can be seen from emperical experience of UI designers [evidence 1](https://news.ycombinator.com/item?id=16468280), [evidence 2](https://www.mathworks.com/products/stateflow.html) Evidence 2 is stateflow designer for people who develop MATLAB programs. 
+
+
+### Behavior Trees 
+
+Now that we have seen the efficacy of moving away from explicit low level design and having a high level design preliminary start 
