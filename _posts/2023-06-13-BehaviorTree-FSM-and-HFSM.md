@@ -32,9 +32,9 @@ Thus, we require a better code/framework writing method that helps us with these
 ### Finite State Machine
 These require no introduction really, a finite set of states that switch based on certain conditions or changes in states. Generally when talking about design of autonomy software architecture, development of individual software autonomy modules and switching between them is a common practice. Essentially a FSM for autonomous system like a robot will be a hybrid automata, i.e. a dynamical system with both discrete and continuous states. We can try to model our decision system defined above as a hybrid automata, here we can have move left, move right and move forward could be the simple action states between which we switch. Now let's judge how our method behaves when judged on our definition of good code: 
 
-    - There could be quick jumps between states thus not making the switches meaningful(in this case since the automata are meant for different purpose).
-    - Code modularity is there in the sense that we can write individual behaviors and store them for some other use, however, due to the shortage of robustness to fast switching between logics we see that code needs to take into account fast switching. Which clearly makes it more dependent on the external structure of the high level logic. Which we didn't want. 
-    - Bug finding is easy in such small logics, in larger finite automata the number of connections between the nodes explodes, thus making it infeasible to isolate the bug. Also, in a highly connected architecture, it's difficult to say what's failing exactly, note that it's possible to say the node that threw the error is the faulty one, but on a logical level the fault could be coming from some other node that did not fail because environment supported and this caused the system to get into this state with some hidden, unaccounted variables that suddenly start appearing and affecting the low level execution of controls. 
+  - There could be quick jumps between states thus not making the switches meaningful(in this case since the automata are meant for different purpose).
+  - Code modularity is there in the sense that we can write individual behaviors and store them for some other use, however, due to the shortage of robustness to fast switching between logics we see that code needs to take into account fast switching. Which clearly makes it more dependent on the external structure of the high level logic. Which we didn't want. 
+  - Bug finding is easy in such small logics, in larger finite automata the number of connections between the nodes explodes, thus making it infeasible to isolate the bug. Also, in a highly connected architecture, it's difficult to say what's failing exactly, note that it's possible to say the node that threw the error is the faulty one, but on a logical level the fault could be coming from some other node that did not fail because environment supported and this caused the system to get into this state with some hidden, unaccounted variables that suddenly start appearing and affecting the low level execution of controls. 
 
 Now, while this simplistic design showed us some faults, is it possible to mitigate with better design, note that currently I am not using any slack variables, is it possible to make the structure stable? Yes, a little but adding more elements to the design adds more complexity generally it is more difficult to change these structures and slack variables just keep adding up as you add more and more nodes. A finite state machine based architecture can be found in FSM's implemented for ROS. Earlier Nav stack used to be state machine based now they have pivoted. 
 
@@ -52,11 +52,11 @@ A mathematical definition of the finite state machine would be given by a triple
 
 A Deterministic input-output automata can be represented by equations of the following form:
 $$
-l^{#} = \nu(l,i)
+l^{\#} = \nu(l,i)
 o = \eta(l,i) 
 $$
 
-where $$l^{#}$$ denotes the new value of discrete state after the event takes place, resulting from the old discrete state value l and the input i.
+where $$l^{\#}$$ denotes the new value of discrete state after the event takes place, resulting from the old discrete state value l and the input i.
 
 A set valued mapping from $$\mathbb{R}^{m}$$, or from a subset S of $$\mathbb{R}^{m}$$, associates, with every point $$ x \in \mathbb{R^m}$$, or every point $$ x \in S $$, a subset of $$ \mathbb{R}^{n}$$. It's notation is double arrow, $$M: \mathbb{R}^{m} \rightrightarrows S$$, for $$S \in \mathbb{R}^{n}$$, indicates that M is a set valued mapping with $$M(x) \in S$$ where S is a subset of $$ \mathbb(R)^m$$.
 
