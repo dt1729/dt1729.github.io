@@ -106,4 +106,4 @@ Based on these it is easy to conclude that overall we have a much better system 
 
 ### Behavior Trees 
 
-Now that we have seen the efficacy of moving away from explicit low level design and having a high level design preliminary start 
+Now that we have seen the efficacy of moving away from explicit low level design and having a high level design as a preliminary starting point. It is clear that a design scheme that operates on high level design and accounts for low level design is the way to go. We now take a look at behavior trees, a design paradigm that operates on high level behaviors. The tree structure of the design gives it the modularity and reusability. As shown in the figure, behaviortrees would have sub-behaviors named as nodes that would be responsible for execution on the actual hardware. The connection between these behaviors is based on different kind of nodes like switching nodes, 
