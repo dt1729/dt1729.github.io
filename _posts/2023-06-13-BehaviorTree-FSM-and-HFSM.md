@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Behavior Trees as an alternative to FSM and Heirarchical FSM[under works]
+title: Behavior Trees as an alternative to FSM and Heirarchical FSM
 date: 2023-06-13 09:47:00-0400
 description: Description and contrasting Properties of FSMs and HFSMs 
 tags: Task Planning
