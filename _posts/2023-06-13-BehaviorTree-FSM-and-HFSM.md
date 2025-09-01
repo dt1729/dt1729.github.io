@@ -3,8 +3,8 @@ layout: post
 title: Behavior Trees as an alternative to FSM and Heirarchical FSM
 date: 2023-06-13 09:47:00-0400
 description: Description and contrasting Properties of FSMs and HFSMs 
-tags: Task Planning
-categories: Control Motion Planning Task Planning
+tags: Task_Planning
+categories: Task_Planning
 bibliography: 2022-08-23-Search-and-Rescue-using-multiple-surface-vehicles.bib
 ---
 
@@ -18,7 +18,7 @@ Using this it has an obstacle avoidance functionality, I should also point out t
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/StateMachine_BTBlog.png" class="StateMachine" width="500" height="300" zoomable=true %}
+        {% include figure.html path="assets/img/StateMachine_BTBlog.png" class="StateMachine" width="700" height="1000" zoomable=true %}
     </div>
 </div>
 <div class="caption">
@@ -68,7 +68,7 @@ These new design definitions add a bit of nuance to our FSM design example by ma
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/HybridStateMachine_BTBlog.png" class="Hybrid State Machine" zoomable=true %}
+        {% include figure.html path="assets/img/HybridStateMachine_BTBlog.png" class="Hybrid State Machine" width="700" height="1000" zoomable=true %}
     </div>
 </div>
 <div class="caption">
