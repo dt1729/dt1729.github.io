@@ -18,7 +18,7 @@ Using this it has an obstacle avoidance functionality, I should also point out t
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/StateMachine_BTBlog.png" class="StateMachine" zoomable=true %}
+        {% include figure.html path="assets/img/StateMachine_BTBlog.png" class="StateMachine" width="500" height="300" zoomable=true %}
     </div>
 </div>
 <div class="caption">
