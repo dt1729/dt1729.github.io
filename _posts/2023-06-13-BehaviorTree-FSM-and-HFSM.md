@@ -18,11 +18,11 @@ Using this it has an obstacle avoidance functionality, I should also point out t
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/VictorSierra.png" class="Victor-Sierra Search" zoomable=true %}
+        {% include figure.html path="assets/img/StateMachine_BTBlog.png" class="StateMachine" zoomable=true %}
     </div>
 </div>
 <div class="caption">
-    Fig. 1 Victor-Sierra Search with Datum information.
+    Fig. 1 Basic Navigation Flow Chart.
 </div>
 
 The flow chart illustrates how decisions are made based on previous inputs. Although this representation simplifies the underlying logic, it effectively conveys the sequential nature of information and data flow between components.
@@ -68,11 +68,11 @@ These new design definitions add a bit of nuance to our FSM design example by ma
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/VictorSierra.png" class="Victor-Sierra Search" zoomable=true %}
+        {% include figure.html path="assets/img/HybridStateMachine_BTBlog.png" class="Hybrid State Machine" zoomable=true %}
     </div>
 </div>
 <div class="caption">
-    Fig. 1 Victor-Sierra Search with Datum information.
+    Fig. 1 Hybrid Navigation State Machine.
 </div>
 
 This resolves the complexity a little bit, but remember this is a statechart design from a state machine i.e. bottom-up design and not a top to bottom design i.e. we didn't design the behavior and move to the atomic parts. Doing it that way, we can have many ways to model this behavior. 
