@@ -18,7 +18,7 @@ Using this it has an obstacle avoidance functionality, I should also point out t
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/StateMachine_BTBlog.png" class="StateMachine" width="700" height="1000" zoomable=true %}
+        {% include figure.html path="assets/img/StateMachine_BTBlog.png" class="StateMachine"  width="350" height="500" zoomable=true %}
     </div>
 </div>
 <div class="caption">
@@ -68,7 +68,7 @@ These new design definitions add a bit of nuance to our FSM design example by ma
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/HybridStateMachine_BTBlog.png" class="Hybrid State Machine" width="700" height="1000" zoomable=true %}
+        {% include figure.html path="assets/img/HybridStateMachine_BTBlog.png" class="Hybrid State Machine" width="350" height="500" zoomable=true %}
     </div>
 </div>
 <div class="caption">
