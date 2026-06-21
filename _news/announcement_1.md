@@ -1,7 +1,7 @@
 ---
 layout: post
-date: 1-1-2022 15:59:00-0400
+date: 2022-01-01 15:59:00-0400
 inline: true
 ---
 
-Started as a graduate student at CU Boulder!
+Started M.S. in Electrical Engineering at the University of Colorado Boulder!

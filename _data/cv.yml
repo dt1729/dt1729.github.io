@@ -3,95 +3,104 @@
   contents:
     - name: Full Name
       value: Divya Tiwari
-    - name: Date of Birth
-      value: 11th December 1998
+    - name: Location
+      value: Newton, Massachusetts, USA
     - name: Languages
       value: English, Hindi
 
 - title: Education
   type: time_table
   contents:
-    - title: Masters of Sciences
-      institution: University of Colorado, Boulder, United States
-      year: 2022-
+    - title: Master of Sciences, Electrical Engineering
+      institution: University of Colorado, Boulder, USA
+      year: 2022 - 2023
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Bachelors of Engineering
-      institution: Netaji Subhas Institute of Technology(Delhi University), New Delhi, India
-      year: 2020
+        - Focus on Control Theory and Robotics.
+        - Research at CAIRO Lab — LLM-based root cause identification for robotic behavior trees.
+        - TA for Advanced Robotics (CSCI 5302, ~50 students).
+        - Embedded SW volunteer on SWARM-EX CubeSat.
+    - title: Bachelor of Engineering, Instrumentation and Control
+      institution: Netaji Subhas Institute of Technology (University of Delhi), New Delhi, India
+      year: 2016 - 2020
       description:
-        - Description 1.
-        - Description 2.
+        - Published 2 papers (1 journal, 1 conference) at Advanced Process Controls Lab.
+        - Member of CubeSat club.
 
 - title: Experience
   type: time_table
   contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
+    - title: Hardware Engineer
+      institution: Amazon Robotics, Westborough, MA
+      year: Jan 2024 – Present
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Visiting Professor
-      institution: California Institute of Technology, Pasadena, California, US
-      year: 1933
+        - Designed and deployed robotic workcells for multiple manipulation programs across motor drives, motion controllers, and safety-rated EtherCAT control.
+        - Implemented CANOpen-over-EtherCAT motion control for coordinated multi-axis end-effector actuation.
+        - Developed FSoE/SoE safety-rated motion control solutions meeting functional safety requirements.
+        - Deployed 10+ workcells across manipulation R&D programs.
+        - Authored Python HMI library replacing legacy LabVIEW system, eliminating vendor lock-in.
+    - title: Hardware Test Engineer Intern
+      institution: Amazon Robotics, Westborough, MA
+      year: May – Aug 2023
       description:
-        - Description 1.
-        - Description 2.
-
-    - title: Director
-      institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
-      year: 1917-1933
-
-    - title: Professor of Theoretical Physics
-      institution: Karl-Ferdinand University, Prague, Czechoslovakia
-      year: 1911 - 1917
+        - Developed GenICam-compliant camera drivers for RGB-D and RGB sensors from 3 vendors.
+        - Automated multi-camera network configuration via DHCP server, reducing setup time 71%.
+        - Interfaced with OEM application engineers to obtain firmware and hardware specifications.
+    - title: Robotics Intern
+      institution: Addverb RnD, Fremont, CA
+      year: Dec 2022 – May 2023
       description:
+        - Deployed ArUco-tag global localization corrector integrated into AMCL/Gmapping navigation stacks.
+        - Configured Isaac Sim for warehouse simulation and synthetic data generation via Replicator pipeline.
+        - Built collision avoidance system using object detection and inverse perspective transform for AMR dynamic environments.
+        - Trained and benchmarked object detection models across client, public benchmark, and synthetic datasets.
+        - Ported detection network to OpenVINO for real-time inference on Intel i7 iGPU.
+    - title: Research Assistant
+      institution: CAIRO Lab, University of Colorado Boulder
+      year: Aug 2022 – Dec 2023
+      description:
+        - Root Cause Analysis in Behavior Trees using Large Language Models.
+        - Built GPT-4/LangChain chatbot for automated behavior tree root cause analysis with K-Means prompt clustering.
+        - Implemented pick-and-insert pipeline for Sawyer arm using MoveIt2 and BehaviorTree.CPP.
+        - Benchmarked Llama-2 with AWQ quantization for on-device inference on Intel i7 edge hardware.
+        - Developed SAM-based scene graph pipeline from robot video streams for pick-and-insert task analysis.
+    - title: Research Assistant
+      institution: Dept. of ECE, IIIT Delhi, India
+      year: Oct 2020 – Nov 2021
+      description:
+        - Autonomous Last Mile Vehicle (ALIVE project).
+        - Refactored ROS autonomy stack in CARLA simulator for systematic planning algorithm evaluation.
+        - Integrated RRT*-based local planner via OMPL for real-time vehicle navigation.
+        - Accelerated LiDAR occupancy grid construction 80% via Bresenham's algorithm, enabling real-time mapping.
+        - Designed and benchmarked Pure Pursuit and Stanley lateral controllers in CARLA.
 
-    - title: Associate Professor of Theoretical Physics
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1909 - 1911
-
-- title: Open Source Projects
-  type: time_table
-  contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
-
-- title: Honors and Awards
-  type: time_table
-  contents:
-    - year: 1921
-      items: 
-        - Nobel Prize in Physics 
-        - Matteucci Medal
-    - year: 2029
-      items: 
-        - Max Planck Medal
-
-- title: Academic Interests
+- title: Technical Skills
   type: nested_list
   contents:
-    - title: Topic 1.
-      items: 
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
+    - title: Languages
       items:
-        - Description 1.
-        - Description 2.
+        - C, C++ (17, 20), Python, Julia, MATLAB, LabVIEW
+    - title: Tools & Frameworks
+      items:
+        - ROS, ROS2, CUDA, SIMD Programming, OpenCV, PyTorch, PCL, Eigen
+        - CVXPY, IPOPT, CasADi, Open3D, OMPL, MoveIt2, BehaviorTree.CPP
+    - title: Communication Protocols
+      items:
+        - CAN, CANOpen, EtherCAT (FSoE, SoE), SPI, I2C, UART
+    - title: Simulation
+      items:
+        - CARLA, Isaac Sim, Gazebo, CODESYS
+
+- title: Selected Coursework
+  type: list
+  contents:
+    - Nonlinear Control
+    - Random Processes
+    - Decision Making under Uncertainty
+    - Algorithmic Motion Planning
+    - Advanced Convex Optimization
+    - Theory of Autonomous Systems
 
 - title: Other Interests
   type: list
   contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+    - <u>Hobbies:</u> Hiking, Badminton, Reading

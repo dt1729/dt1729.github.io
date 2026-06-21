@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
+gem 'csv', '< 3.3'
+gem 'forwardable', '< 1.4'
 group :jekyll_plugins do
-    gem 'jekyll'
+    gem 'jekyll', '~> 4.3.0'
     gem 'jekyll-archives'
     gem 'jekyll-diagrams'
     gem 'jekyll-email-protect'
