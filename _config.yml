@@ -9,10 +9,10 @@ last_name: Tiwari
 email: divya.tiwari@colorado.edu
 description:  # the ">" symbol means to ignore newlines until "footer_text:"
  
-# footer_text: >
-#   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
-#   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-#   Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
+footer_text: >
+  Visual design adapted from <a href="https://realitymatrix.github.io/what-irregularity-costs/" target="_blank">What Irregularity Costs</a> by Petr Korolev.
+  Built with <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> and the <a href="https://github.com/alshedivat/al-folio" target="_blank">al-folio</a> theme,
+  hosted on <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
 # keywords: jekyll, jekyll-theme, academic-website, portfolio-website  # add your own keywords or leave empty
 
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
@@ -28,8 +28,8 @@ impressum_path:  # set to path to include impressum link in the footer, use the 
 # -----------------------------------------------------------------------------
 
 # code highlighter theme
-highlight_theme_light: dark   # https://github.com/jwarby/jekyll-pygments-themes
-highlight_theme_dark: dark    # https://github.com/jwarby/jekyll-pygments-themes
+highlight_theme_light: github   # https://github.com/jwarby/jekyll-pygments-themes
+highlight_theme_dark: native    # https://github.com/jwarby/jekyll-pygments-themes
 
 # repo color theme
 repo_theme_light: dark       # https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
@@ -48,10 +48,10 @@ repo_theme_dark: dark           # https://github.com/anuraghazra/github-readme-s
 # -----------------------------------------------------------------------------
 
 navbar_fixed: true
-footer_fixed: true
+footer_fixed: false
 
 # Dimensions
-max_width: 800px
+max_width: 760px
 
 # TODO: add layout settings (single page vs. multi-page)
 

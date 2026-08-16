@@ -1,6 +1,31 @@
-<div class="repo p-2 text-center">
-  <a href="https://github.com/{{ include.username }}">
-    <img class="repo-img-light w-100" alt="{{ include.username }}" src="https://github-readme-stats.vercel.app/api/?username={{ include.username }}&theme={{ site.repo_theme_light }}&show_icons=true">
-    <img class="repo-img-dark w-100" alt="{{ include.username }}" src="https://github-readme-stats.vercel.app/api/?username={{ include.username }}&theme={{ site.repo_theme_dark }}&show_icons=true">
+{%- comment -%}
+Renders a GitHub profile card from data fetched at build time by
+_plugins/github-repos.rb. No avatar: the paper theme is typographic, and
+skipping it keeps the page free of runtime image requests.
+{%- endcomment -%}
+{%- assign profile = site.data.github_profiles[include.username] -%}
+
+<div class="repo-card repo-card-user">
+  {%- if profile -%}
+  <a class="repo-card-name" href="{{ profile.html_url }}">
+    {{ profile.name | default: profile.login }}
   </a>
+  <div class="repo-card-login">@{{ profile.login }}</div>
+  {%- if profile.bio %}
+  <p class="repo-card-desc">{{ profile.bio }}</p>
+  {%- endif %}
+  <div class="repo-card-meta">
+    <span><span class="lbl">repos</span>{{ profile.public_repos }}</span>
+    {%- if profile.total_stars %}
+    <span><span class="lbl">stars</span>{{ profile.total_stars }}</span>
+    {%- endif %}
+    <span><span class="lbl">followers</span>{{ profile.followers }}</span>
+    <span><span class="lbl">following</span>{{ profile.following }}</span>
+  </div>
+  {%- else -%}
+  <a class="repo-card-name" href="https://github.com/{{ include.username }}">
+    {{ include.username }}
+  </a>
+  <p class="repo-card-desc repo-card-muted">Details unavailable at build time.</p>
+  {%- endif -%}
 </div>

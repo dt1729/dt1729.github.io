@@ -1,0 +1,573 @@
+/*******************************************************************************
+ * Paper theme
+ *
+ * Typographic layer applied on top of al-folio / Bootstrap / MDB. The look is
+ * a printed-paper one: serif body text, a system-sans voice for headings,
+ * monospace for anything that is metadata rather than prose, hairline rules
+ * instead of shadows, and 2px corners instead of pills.
+ *
+ * Loaded last from assets/css/main.scss so it wins over the vendor CSS without
+ * needing !important.
+ ******************************************************************************/
+
+// ---------------------------------------------------------------- Body type
+
+body {
+  font-family: $font-serif;
+  font-size: 17px;
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+p {
+  margin: 0 0 16px;
+}
+
+// Metadata voice: anything that labels content rather than being content.
+.post-meta,
+.post-tags,
+.post-description,
+.caption,
+figcaption,
+.profile .address,
+.venue {
+  font-family: $font-mono;
+  color: var(--global-text-color-light);
+}
+
+// ---------------------------------------------------------------- Headings
+
+h1, h2, h3, h4, h5, h6,
+.navbar-brand,
+.card-title {
+  font-family: $font-sans;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: 2.1rem;
+  line-height: 1.22;
+  letter-spacing: -0.025em;
+  font-weight: 640;
+  margin: 0 0 6px;
+}
+
+h2 {
+  font-size: 1.28rem;
+  font-weight: 620;
+  margin: 2.2rem 0 1rem;
+}
+
+h3 {
+  font-size: 0.97rem;
+  font-weight: 620;
+  letter-spacing: -0.005em;
+  margin: 2rem 0 0.5rem;
+}
+
+h4, h5, h6 {
+  font-size: 0.9rem;
+  font-weight: 620;
+  margin: 1.6rem 0 0.5rem;
+}
+
+// ---------------------------------------------------------------- Links
+
+a, table.table a {
+  color: var(--global-theme-color);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--global-theme-color);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+}
+
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid var(--global-theme-color);
+  outline-offset: 2px;
+}
+
+// ---------------------------------------------------------------- Rules
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--global-rule-color);
+  margin: 3rem 0;
+  opacity: 1;
+}
+
+// ---------------------------------------------------------------- Navbar
+
+.navbar {
+  border-bottom: 1px solid var(--global-rule-color);
+  background-color: var(--global-bg-color);
+  opacity: 1;
+  box-shadow: none;
+
+  .navbar-brand {
+    font-weight: 640;
+    letter-spacing: -0.02em;
+  }
+}
+
+.navbar.navbar-light .navbar-nav .nav-item .nav-link {
+  font-family: $font-mono;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--global-text-color-light);
+
+  &:hover {
+    color: var(--global-theme-color);
+  }
+}
+
+.navbar.navbar-light .navbar-nav .nav-item.active > .nav-link {
+  font-weight: 500;
+  color: var(--global-text-color);
+}
+
+.navbar .dropdown-menu {
+  border: 1px solid var(--global-rule-color);
+  border-radius: 2px;
+  box-shadow: none;
+}
+
+// ---------------------------------------------------------------- Buttons
+
+.btn,
+a.btn,
+.publications ol.bibliography li .links a.btn {
+  font-family: $font-mono;
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  border-radius: 2px;
+  border: 1px solid var(--global-rule-hard-color);
+  background: transparent;
+  color: var(--global-text-color);
+  box-shadow: none;
+  padding: 8px 15px;
+  transition: border-color 0.15s, color 0.15s, background-color 0.15s;
+
+  &:hover {
+    background: var(--global-surface-color);
+    box-shadow: none;
+    border-color: var(--global-theme-color);
+    color: var(--global-theme-color);
+    text-decoration: none;
+  }
+}
+
+// Other button-like controls pick up the same hover fill. The nav links are
+// the only button-shaped things most pages actually render, so they matter
+// more here than .btn does.
+.dropdown-item:hover,
+.pagination .page-item .page-link:hover {
+  background-color: var(--global-surface-color);
+  color: var(--global-theme-color);
+}
+
+.navbar.navbar-light .navbar-nav .nav-item .nav-link,
+#light-toggle {
+  border-radius: 2px;
+  transition: color 0.15s, background-color 0.15s;
+}
+
+.navbar.navbar-light .navbar-nav .nav-item .nav-link:hover,
+#light-toggle:hover {
+  background-color: var(--global-surface-color);
+}
+
+// ---------------------------------------------------------------- Tables
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.86rem;
+
+  th, td {
+    padding: 7px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--global-rule-color);
+    font-size: 0.86rem;
+  }
+
+  thead th {
+    font-family: $font-mono;
+    font-weight: 500;
+    font-size: 0.7rem;
+    color: var(--global-text-color-light);
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--global-rule-hard-color);
+  }
+
+  tbody tr:last-child td {
+    border-bottom: 1px solid var(--global-rule-hard-color);
+  }
+
+  // Numeric columns line up under each other.
+  td.n, th.n {
+    text-align: right;
+    font-family: $font-mono;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+caption {
+  caption-side: bottom;
+  text-align: left;
+  color: var(--global-text-color-light);
+  font-size: 0.87rem;
+  padding-top: 14px;
+  line-height: 1.5;
+  max-width: 64ch;
+}
+
+// ---------------------------------------------------------------- Code
+
+code {
+  font-family: $font-mono;
+  font-size: 0.86em;
+  color: var(--global-text-color);
+  background-color: var(--global-code-bg-color);
+  border-radius: 2px;
+  padding: 0.1em 0.34em;
+}
+
+pre {
+  font-family: $font-mono;
+  color: var(--global-text-color);
+  background-color: var(--global-code-bg-color);
+  border: 1px solid var(--global-rule-color);
+  border-radius: 2px;
+  padding: 16px 18px;
+  overflow-x: auto;
+  font-size: 0.82rem;
+  line-height: 1.55;
+
+  code {
+    background: none;
+    padding: 0;
+    font-size: inherit;
+  }
+}
+
+// Pygments themes paint their own background; keep ours.
+.highlight,
+figure.highlight,
+figure.highlight pre,
+div.highlighter-rouge pre {
+  background-color: var(--global-code-bg-color);
+}
+
+// ---------------------------------------------------------------- Quotes
+
+blockquote {
+  background: transparent;
+  border-left: 2px solid var(--global-rule-hard-color);
+  color: var(--global-text-color-light);
+  font-size: 1.02rem;
+  font-style: italic;
+  margin: 1.6rem 0;
+  padding: 0.2rem 0 0.2rem 1.1rem;
+}
+
+.post .post-content blockquote {
+  border-left: 2px solid var(--global-rule-hard-color);
+  padding: 0.2rem 0 0.2rem 1.1rem;
+}
+
+// ---------------------------------------------------------------- Figures
+
+figure {
+  margin: 26px 0 8px;
+}
+
+figcaption,
+.caption {
+  font-size: 0.87rem;
+  line-height: 1.5;
+  max-width: 64ch;
+  padding-top: 10px;
+  text-align: left;
+}
+
+// MDB ships drop shadows and rounded corners on images and cards via
+// .z-depth-* / .rounded; the paper look wants neither. MDB declares those
+// shadows with !important, so matching it is the only way to win here.
+img,
+.profile img,
+.card,
+.z-depth-0, .z-depth-1, .z-depth-1-half, .z-depth-2, .z-depth-3 {
+  border-radius: 0;
+  box-shadow: none !important;
+}
+
+// ---------------------------------------------------------------- Cards
+
+.card {
+  background-color: var(--global-card-bg-color);
+  border: 0;
+  border-top: 2px solid var(--global-rule-hard-color);
+  border-radius: 0;
+  box-shadow: none;
+
+  .card-title {
+    font-size: 1rem;
+    font-weight: 620;
+  }
+
+  .card-text {
+    font-size: 0.9rem;
+    color: var(--global-text-color-light);
+  }
+}
+
+.cv .card {
+  border: 1px solid var(--global-rule-color);
+  border-radius: 2px;
+
+  .list-group-item {
+    border-color: var(--global-rule-color);
+  }
+
+  .badge {
+    font-family: $font-mono;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    border-radius: 2px;
+  }
+}
+
+// ---------------------------------------------------------------- Blog
+
+.header-bar {
+  border-bottom: 1px solid var(--global-rule-color);
+  padding-top: 3.5rem;
+  padding-bottom: 2.5rem;
+
+  h1 {
+    color: var(--global-text-color);
+    font-size: 2.4rem;
+  }
+
+  h2, .description {
+    font-family: $font-serif;
+    font-style: italic;
+    font-size: 1.08rem;
+    color: var(--global-text-color-light);
+    letter-spacing: 0;
+  }
+}
+
+.tag-list {
+  border-bottom: 1px solid var(--global-rule-color);
+
+  ul p, ul li {
+    font-family: $font-mono;
+    font-size: 0.76rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+}
+
+.post-list li {
+  border-bottom: 1px solid var(--global-rule-color);
+
+  .post-meta,
+  .post-tags {
+    font-size: 0.76rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    margin: 0.4rem 0;
+  }
+}
+
+.post .post-meta,
+.post .post-tags {
+  font-size: 0.76rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.pagination {
+  .page-item .page-link {
+    font-family: $font-mono;
+    font-size: 0.8rem;
+    border-radius: 2px;
+    border-color: var(--global-rule-color);
+    background-color: transparent;
+  }
+
+  .page-item.active .page-link {
+    background-color: transparent;
+    border-color: var(--global-text-color);
+    color: var(--global-text-color);
+  }
+}
+
+// ---------------------------------------------------------------- Sections
+
+// al-folio right-aligns these grey year/category dividers; keep the position
+// but render them as the same uppercase mono label used elsewhere.
+.publications h2.year,
+.projects h2.category {
+  font-family: $font-mono;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--global-text-color-light);
+  border-color: var(--global-rule-hard-color);
+}
+
+.publications {
+  h1 {
+    color: var(--global-text-color);
+    font-size: 2.1rem;
+  }
+
+  ol.bibliography li {
+    .abbr abbr {
+      font-family: $font-mono;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      background-color: transparent;
+      border: 1px solid var(--global-rule-hard-color);
+      border-radius: 2px;
+
+      a {
+        color: var(--global-text-color-light);
+      }
+    }
+
+    .title {
+      font-weight: 620;
+    }
+
+    .author,
+    .periodical {
+      font-size: 0.95rem;
+      color: var(--global-text-color-light);
+    }
+  }
+}
+
+// ---------------------------------------------------------------- Repos
+
+// Cards built from build-time GitHub data (see _plugins/github-repos.rb).
+// Same top-rule construction as the reference's stat cards: no border box,
+// no shadow, mono labels above the value.
+.repo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 26px 32px;
+  margin: 1.75rem 0 2.5rem;
+}
+
+.repo-card {
+  border-top: 2px solid var(--global-rule-hard-color);
+  padding-top: 14px;
+  min-width: 0; // let long repo names wrap instead of stretching the track
+
+  .repo-card-name {
+    font-family: $font-sans;
+    font-size: 1rem;
+    font-weight: 620;
+    letter-spacing: -0.015em;
+    color: var(--global-text-color);
+    text-decoration: none;
+    overflow-wrap: anywhere;
+
+    &:hover {
+      color: var(--global-theme-color);
+      text-decoration: none;
+    }
+  }
+
+  .repo-card-owner {
+    font-weight: 400;
+    color: var(--global-text-color-light);
+  }
+
+  .repo-card-login {
+    font-family: $font-mono;
+    font-size: 0.78rem;
+    color: var(--global-text-color-light);
+    padding-top: 2px;
+  }
+
+  .repo-card-desc {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--global-text-color-light);
+    margin: 8px 0 0;
+  }
+
+  .repo-card-muted {
+    font-style: italic;
+  }
+
+  .repo-card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 20px;
+    margin-top: 12px;
+    font-family: $font-mono;
+    font-size: 0.82rem;
+    font-variant-numeric: tabular-nums;
+    color: var(--global-text-color);
+
+    .lbl {
+      display: block;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--global-text-color-light);
+    }
+  }
+}
+
+// ---------------------------------------------------------------- Footer
+
+footer.fixed-bottom,
+footer.sticky-bottom {
+  font-family: $font-mono;
+  font-size: 0.74rem;
+  letter-spacing: 0.04em;
+  text-align: center;
+  line-height: 1.6;
+  background-color: var(--global-footer-bg-color);
+  border-top: 1px solid var(--global-rule-color);
+  color: var(--global-footer-text-color);
+
+  .container {
+    color: var(--global-footer-text-color);
+  }
+
+  a {
+    color: var(--global-footer-link-color);
+  }
+}
+
+// ---------------------------------------------------------------- Motion
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  html.transition,
+  html.transition * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

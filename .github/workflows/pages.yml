@@ -37,6 +37,11 @@ jobs:
         id: pages
         uses: actions/configure-pages@v3
       - run: bundle exec jekyll build # defaults output to '/_site'
+        env:
+          # Lets _plugins/github-repos.rb call the GitHub API as an
+          # authenticated user (5000 req/hr) instead of sharing the runner's
+          # anonymous 60 req/hr quota. Automatically provided by Actions.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3 # This will automatically upload an artifact from the '/_site' directory
 

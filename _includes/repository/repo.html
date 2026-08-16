@@ -1,14 +1,30 @@
-{% assign repo_url =  include.repository | split: '/' %}
+{%- comment -%}
+Renders a repo card from data fetched at build time by _plugins/github-repos.rb.
+Falls back to a plain link if the card is missing, so a GitHub outage degrades
+to a working link rather than a broken image.
+{%- endcomment -%}
+{%- assign card = site.data.github_repo_cards[include.repository] -%}
+{%- assign parts = include.repository | split: '/' -%}
 
-{% if site.data.repositories.github_users contains repo_url.first %}
-  {% assign show_owner = false %}
-{% else %}
-  {% assign show_owner = true %}
-{% endif %}
-
-<div class="repo p-2 text-center">
-  <a href="https://github.com/{{ include.repository }}">
-    <img class="repo-img-light w-100" alt="{{ include.repository }}" src="https://github-readme-stats.vercel.app/api/pin/?username={{ repo_url.first }}&repo={{ repo_url.last }}&theme={{ site.repo_theme_light }}&show_owner={{ show_owner }}">
-    <img class="repo-img-dark w-100" alt="{{ include.repository }}" src="https://github-readme-stats.vercel.app/api/pin/?username={{ repo_url.first }}&repo={{ repo_url.last }}&theme={{ site.repo_theme_dark }}&show_owner={{ show_owner }}">
+<div class="repo-card">
+  {%- if card -%}
+  <a class="repo-card-name" href="{{ card.html_url }}">
+    <span class="repo-card-owner">{{ card.owner.login }}/</span>{{ card.name }}
   </a>
+  {%- if card.description %}
+  <p class="repo-card-desc">{{ card.description }}</p>
+  {%- endif %}
+  <div class="repo-card-meta">
+    {%- if card.language %}
+    <span><span class="lbl">lang</span>{{ card.language }}</span>
+    {%- endif %}
+    <span><span class="lbl">stars</span>{{ card.stargazers_count }}</span>
+    <span><span class="lbl">forks</span>{{ card.forks_count }}</span>
+  </div>
+  {%- else -%}
+  <a class="repo-card-name" href="https://github.com/{{ include.repository }}">
+    <span class="repo-card-owner">{{ parts.first }}/</span>{{ parts.last }}
+  </a>
+  <p class="repo-card-desc repo-card-muted">Details unavailable at build time.</p>
+  {%- endif -%}
 </div>

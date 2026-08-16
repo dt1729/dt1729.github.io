@@ -3,18 +3,23 @@
  ******************************************************************************/
  
 :root {
-  --global-bg-color: #{$white-color};
-  --global-code-bg-color: #{$code-bg-color-light};
-  --global-text-color: #{$black-color};
-  --global-text-color-light: #{$grey-color};
-  --global-theme-color: #{$my-color-links};
-  --global-hover-color: #{$my-color-links};
-  --global-footer-bg-color: #{$grey-color-dark};
-  --global-footer-text-color: #{$grey-color-light};
-  --global-footer-link-color: #{$white-color};
-  --global-distill-app-color: #{$grey-color};
-  --global-divider-color: rgba(0,0,0,.1);
-  --global-card-bg-color: #{$white-color};
+  --global-bg-color: #{$paper-bg};
+  --global-code-bg-color: #{$paper-code-bg};
+  --global-text-color: #{$paper-fg};
+  --global-text-color-light: #{$paper-muted};
+  --global-theme-color: #{$paper-accent};
+  --global-hover-color: #{$paper-accent};
+  --global-footer-bg-color: #{$paper-bg};
+  --global-footer-text-color: #{$paper-muted};
+  --global-footer-link-color: #{$paper-accent};
+  --global-distill-app-color: #{$paper-muted};
+  --global-divider-color: #{$paper-rule};
+  --global-card-bg-color: #{$paper-bg};
+
+  // Extra tokens the paper theme leans on.
+  --global-rule-color: #{$paper-rule};
+  --global-rule-hard-color: #{$paper-rule-hard};
+  --global-surface-color: #{$paper-surface};
 
   .fa-sun {
     display : none;
@@ -34,18 +39,22 @@
 }
 
 html[data-theme='dark'] {
-  --global-bg-color: #{$grey-color-dark};
-  --global-code-bg-color: #{$code-bg-color-dark};
-  --global-text-color: #{$grey-color-light};
-  --global-text-color-light: #{$grey-color-light};
-  --global-theme-color: #{$cyan-color};
-  --global-hover-color: #{$cyan-color};
-  --global-footer-bg-color: #{$grey-color-light};
-  --global-footer-text-color: #{$grey-color-dark};
-  --global-footer-link-color: #{$black-color};
-  --global-distill-app-color: #{$grey-color-light};
-  --global-divider-color: #424246;
-  --global-card-bg-color: #{$grey-900};
+  --global-bg-color: #{$ink-bg};
+  --global-code-bg-color: #{$ink-code-bg};
+  --global-text-color: #{$ink-fg};
+  --global-text-color-light: #{$ink-muted};
+  --global-theme-color: #{$ink-accent};
+  --global-hover-color: #{$ink-accent};
+  --global-footer-bg-color: #{$ink-bg};
+  --global-footer-text-color: #{$ink-muted};
+  --global-footer-link-color: #{$ink-accent};
+  --global-distill-app-color: #{$ink-muted};
+  --global-divider-color: #{$ink-rule};
+  --global-card-bg-color: #{$ink-bg};
+
+  --global-rule-color: #{$ink-rule};
+  --global-rule-hard-color: #{$ink-rule-hard};
+  --global-surface-color: #{$ink-surface};
 
   .fa-sun {
     padding-left: 10px;
